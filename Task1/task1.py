@@ -13,7 +13,6 @@ def input_validation(a):
 
 def customer_input():
     """Takes input from the user"""
-    
     print("\n")
     print("Welcome to Beckett Pizza Plaza".rjust(50))
     print("================================".rjust(51))
@@ -30,7 +29,6 @@ def customer_input():
                 return number_of_pizza, delivery, day, app
         except:
             print("Please enter proper number!")
-
 
 def pizza_price(number_of_pizza):
     """ Calculation for the pizza price only without any discount """
@@ -53,8 +51,7 @@ def delivery_charge(number_of_pizza,delivery):
             return 0
         else:
             delivery_amt=2.50
-            return delivery_amt
-                 
+            return delivery_amt          
     else:
         return 0
 
@@ -68,7 +65,6 @@ def app_discount(app, total, delivery_amt, day):
             app_discount_price = (total + delivery_amt) * 0.25
         return app_discount_price
     return 0
-
 
 def calculation(total, tuesday_discount, delivery_amt, app_discount_price):
     """Calculate the total price with above present discounts"""
@@ -98,7 +94,7 @@ def output(number_of_pizza,delivery,total,tuesday_discount,delivery_amt,app_disc
     print(f"Grand Total".ljust(30), f"£{grand_total:.2f}".rjust(10))
     print("\nPlease Visit Again !!!\n")
                        
-                 
+#function call                
 num,delivery,day,app=customer_input()
 price=pizza_price(num)
 tuesday=tuesday_discount_offer(day,price)
